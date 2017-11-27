@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "webpack-dev-server --config webpack.config.dev.js",
     "build": "webpack",
-    "start": "webpack-dev-server --config webpack.config.production.js"
+    "start": "webpack-dev-server --config webpack.config.production.js",
+    "test": "jest"
   },
   "homepage": "https://github.com/temilaj/react-webpack-starter",
   "repository": "https://github.com/temilaj/react-webpack-starter.git",
