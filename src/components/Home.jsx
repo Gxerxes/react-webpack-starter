@@ -1,5 +1,7 @@
 import React from 'react';
 import Footer from './footer';
+import UserName from './userName';
+import SubmitButton from './submitButton';
 
 const formatName = user => `${user.firstName} ${user.lastName}`;
 
@@ -12,6 +14,8 @@ const Home = () => {
     return (
      <div>
         <h1>Hello, {formatName(user)}!</h1>
+        <UserName />
+        <SubmitButton />
         <Footer />
       </div>
    )
