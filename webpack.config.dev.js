@@ -6,6 +6,9 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const port = process.env.PORT || 3000;
 const outputPath = path.join(__dirname, "dist")
 
+// require('font-awesome-webpack');
+var StringReplacePlugin = require('string-replace-webpack-plugin')
+
 module.exports = {
 	entry: './src/app.jsx',
 	output: {
@@ -42,6 +45,22 @@ module.exports = {
 				test: /\.jsx?$/,
 				exclude: /node_modules/,
 				loader: 'eslint-loader'
+			},
+			// {
+            //     test: /\.(eot|svg|ttf|woff|woff2|png)\w*/,
+			// 	//loader: 'file'
+			// 	loader: 'file-loader?publicPath=/static/res/&outputPath=font/'
+			// }
+			{
+				test: /semantic\.css$/,
+				loader: StringReplacePlugin.replace({
+				  replacements: [{
+					  pattern: /https\:\/\/fonts\.googleapis\.com[^\']+/ig,
+					  replacement: function (match, p1, offset, string) {
+						return 'data:text/css,*{}'
+					  }
+					}]
+				})
 			}
 		]
 	},
@@ -53,6 +72,7 @@ module.exports = {
 			template: path.join(__dirname, '/index.html')
 		}),
 		new webpack.EnvironmentPlugin({ NODE_ENV: 'development' }),
+		new StringReplacePlugin()
 	],
 	devtool: "source-map",
 	devServer: {

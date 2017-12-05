@@ -1,6 +1,8 @@
 import React from 'react'
-import { connect } from 'react-redux'
-import { sendMsg } from './toolbarActions'
+
+import { Button } from 'semantic-ui-react'
+// import { connect } from 'react-redux'
+// import { sendMsg } from './toolbarActions'
 
 // const View = ({ btName, sendMsg }) => (
 
@@ -18,14 +20,30 @@ const styles = {
         bottom: '20px',
         width: '20px',
         height: '260px',
-        background: 'red'
+        //background: 'red',
+        display: 'flex',
+        flexDirection: 'column'
     }
 };
 
 export default class Toolbar extends React.Component {
     render() {
         return (
-            <div style={styles.buttonGrp}></div>
+            // <div style={styles.buttonGrp}></div>
+        <div style={styles.buttonGrp}>
+            <Button.Group>
+              <Button icon="fa fa-plus-square" />
+              <Button icon="fa fa-plus-square" />
+              <Button icon="fa fa-plus-square" />
+              <Button icon="fa fa-plus-square" />
+            </Button.Group>
+            {" "}
+            <Button.Group>
+              <Button icon="fa fa-plus-square" />
+              <Button icon="fa fa-plus-square" />
+              <Button icon="fa fa-plus-square" />
+            </Button.Group>
+        </div>
         )
     }
 }
