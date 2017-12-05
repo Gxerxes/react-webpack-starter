@@ -4,6 +4,7 @@
   "description": "a boiler plate for creating react applications bundled by webpack",
   "main": "src/js/app.js",
   "scripts": {
+    "lint": "eslint \"src/components/footer.jsx\" -o lint_main_report.html -f html",
     "dev": "webpack-dev-server --config webpack.config.dev.js",
     "build": "webpack",
     "start": "webpack-dev-server --config webpack.config.production.js",
@@ -33,6 +34,7 @@
   },
   "devDependencies": {
     "babel-core": "^6.26.0",
+    "babel-eslint": "^8.0.2",
     "babel-jest": "^21.2.0",
     "babel-loader": "^7.1.2",
     "babel-preset-env": "^1.6.0",
@@ -42,6 +44,9 @@
     "css-loader": "^0.28.7",
     "enzyme": "^3.2.0",
     "enzyme-adapter-react-16": "^1.1.0",
+    "eslint": "^4.11.0",
+    "eslint-loader": "^1.9.0",
+    "eslint-plugin-react": "^7.5.1",
     "extract-text-webpack-plugin": "^3.0.1",
     "html-webpack-plugin": "^2.30.1",
     "jest": "^21.2.1",

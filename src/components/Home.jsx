@@ -12,6 +12,10 @@ const styles = {
     justifyContent: 'center',
     height: '100%',
     width: '100%'
+  },
+  img: {
+    width: '100%',
+    height: '100%'
   }
 }
 
@@ -23,7 +27,8 @@ const user = {
 const Home = () => {
     return (
      <div style={styles.base}>
-     DMViewer
+     
+     <img src="http://img1.3lian.com/2015/a1/46/d/198.jpg" style={styles.img} />
         {/* <h1>Hello, {formatName(user)}!</h1>
         <UserName />
         <SubmitButton />

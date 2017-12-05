@@ -1,0 +1,9 @@
+*.css
+*.less
+*.sass
+*.html
+*.png
+*.snap
+*.json
+store.js
+client.js
