@@ -1,11 +1,29 @@
 body {
-  background: linear-gradient(to left,#000428 ,#004e92);
-  color: #f8f8f8;
-  display: flex;
-  justify-content: center;
+  // background: linear-gradient(to left,#000428 ,#004e92);
+  // color: #f8f8f8;
+  // display: flex;
+  // justify-content: center;
 }
 
 h1 {
   color: #f8f8f8;
   font-family: helvetica;
+}
+
+.container {
+  // display: flex;
+  // flex-direction: column;
+
+  // width: 100%;
+  // height: 100%;
+
+  // justify-content: flex-start;
+  // align-items: stretch;
+  // align-content: stretch;
+  //border: 1px solid gray;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%; 
 }
