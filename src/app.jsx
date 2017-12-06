@@ -8,6 +8,6 @@ import 'normalize.css';
 import 'semantic-ui-css/semantic.min.css';
 
 ReactDOM.render(
-  <Home />,
+  <Home color="red" />,
   document.querySelector('#root')
 );

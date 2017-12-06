@@ -102,7 +102,10 @@ module.exports = {
 			template: path.join(__dirname, '/index.html')
 		}),
 		new webpack.EnvironmentPlugin({ NODE_ENV: 'development' }),
-		new StringReplacePlugin()
+		new StringReplacePlugin(),
+	// 	new webpack.SourceMapDevToolPlugin({
+	// 		filename: '[file].map'
+	//    })
 	],
 	devtool: "source-map",
 	devServer: {
