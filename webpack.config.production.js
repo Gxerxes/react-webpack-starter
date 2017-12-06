@@ -4,10 +4,12 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 const port = process.env.PORT || 3000;
-const outputPath = path.join(__dirname, "dist")
+const outputPath = path.join(__dirname, "dist");
+
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 
 module.exports = {
-	entry: './src/App.jsx',
+	entry: './src/app.jsx',
 	output: {
 		path: __dirname,
 		filename: 'dist/bundle.js'
@@ -34,26 +36,30 @@ module.exports = {
 				test: /\.(js|jsx)$/,
 				loader: 'babel-loader',
 				exclude: /node_modules/,
+			},
+			{
+				test: /\.(png|woff|woff2|eot|ttf|svg)$/,
+				loader: 'url-loader?limit=100000'
 			}
 		]
 	},
 	plugins: [
 		new ExtractTextPlugin("bundle.css"),
-		new webpack.optimize.UglifyJsPlugin({
-			compress: {
-				screw_ie8: true,
-				warnings: false
-			},
-			mangle: {
-				screw_ie8: true
-			},
-			output: {
-				comments: false,
-				screw_ie8: true
-			},
-			minimize: true,
-			sourceMap: true
-		}),
+		// new webpack.optimize.UglifyJsPlugin({
+		// 	compress: {
+		// 		screw_ie8: true,
+		// 		warnings: false
+		// 	},
+		// 	mangle: {
+		// 		screw_ie8: true
+		// 	},
+		// 	output: {
+		// 		comments: false,
+		// 		screw_ie8: true
+		// 	},
+		// 	minimize: true,
+		// 	sourceMap: true
+		// }),
 		new HtmlWebpackPlugin({
 			inject: true,
 			template: path.join(__dirname, '/index.html'),
@@ -71,6 +77,26 @@ module.exports = {
 			}
 		}),
 		new webpack.EnvironmentPlugin({ NODE_ENV: 'production' }),
+		new UglifyJsPlugin({
+			uglifyOptions: {
+			ie8: false,
+			ecma: 8,
+			// parse: {...options},
+			// mangle: {
+			// 	...options,
+			// 	properties: {
+			// 	// mangle property options
+			// 	}
+			// },
+			// output: {
+			// 	comments: false,
+			// 	beautify: false,
+			// 	...options
+			// },
+			// compress: {...options},
+			warnings: false
+			}
+		})
 	],
 	devtool: "source-map",
 	devServer: {

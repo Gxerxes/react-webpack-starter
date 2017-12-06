@@ -7,3 +7,5 @@
 *.json
 store.js
 client.js
+webpack.config.dev.js
+webpack.config.production.js

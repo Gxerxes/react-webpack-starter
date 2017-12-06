@@ -32,7 +32,7 @@ const styles = {
 export default class ImgContainer extends React.Component {
   render() {
     return (
-        <div style={styles.base}>     
+        <div style={styles.base}>
             <img src="http://img1.3lian.com/2015/a1/46/d/198.jpg" style={styles.img} />
             <span style={styles.center}>DMViewer</span>
             <Toolbar />

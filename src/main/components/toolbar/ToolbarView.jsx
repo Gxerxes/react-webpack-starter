@@ -18,7 +18,7 @@ const styles = {
         position: 'fixed',
         right: '20px',
         bottom: '20px',
-        width: '20px',
+        width: '40px',
         height: '260px',
         //background: 'red',
         display: 'flex',
@@ -31,17 +31,17 @@ export default class Toolbar extends React.Component {
         return (
             // <div style={styles.buttonGrp}></div>
         <div style={styles.buttonGrp}>
-            <Button.Group>
-              <Button icon="fa fa-plus-square" />
-              <Button icon="fa fa-plus-square" />
-              <Button icon="fa fa-plus-square" />
-              <Button icon="fa fa-plus-square" />
+            <Button.Group vertical>
+              <Button icon="align left" />
+              <Button icon="align center"/>
+              <Button icon="align right" />
+              <Button icon="align justify" />
             </Button.Group>
             {" "}
-            <Button.Group>
-              <Button icon="fa fa-plus-square" />
-              <Button icon="fa fa-plus-square" />
-              <Button icon="fa fa-plus-square" />
+            <Button.Group vertical>
+              <Button icon="bold" />
+              <Button icon="underline" />
+              <Button icon="text width" />
             </Button.Group>
         </div>
         )
