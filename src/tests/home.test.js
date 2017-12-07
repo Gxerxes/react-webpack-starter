@@ -2,7 +2,7 @@ import React from 'react'
 import { shallow, configure } from 'enzyme'
 import Adapter from 'enzyme-adapter-react-16';
 
-import Footer from '../../src/components/footer'
+import Home from '../../src/main/Home'
 
 configure({ adapter: new Adapter() });
 
@@ -10,9 +10,9 @@ const props = {
   onClick: jest.fn()
 }
 
-describe('Footer component', () => {
+describe('Home component', () => {
   it('should render dom', () => {
-    const wrapper = shallow(<Footer {...props}/>)
-    expect(wrapper.find('a').text()).toContain('click footer')
+    const wrapper = shallow(<Home {...props}/>)
+    expect(wrapper.find('h1').text()).toContain('Welcome to DMViewer')
   })
 })
