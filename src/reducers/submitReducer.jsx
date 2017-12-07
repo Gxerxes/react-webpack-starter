@@ -12,7 +12,6 @@ const submit = (state = initialState, action) => {
          return {...state, user: action.payload}
     case SubmitActions.SUBMIT_FORM_SUCCESSFUL: 
          return {...state, submitted: action.payload}
-    return state;
     default:
       return state;
   }
