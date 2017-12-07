@@ -18,22 +18,22 @@ module.exports = {
 	},
 	module: {
 		loaders: [
+			{
+				test: /\.scss$/,
+				use: ExtractTextPlugin.extract({
+					use: 'css-loader!postcss-loader!sass-loader'
+				}),
+			},
 			// {
-			// 	test: /\.scss$/,
+			// 	test: /\.less$/,
 			// 	use: ExtractTextPlugin.extract({
-			// 		use: 'css-loader!sass-loader'
+			// 		use: 'style-loader!css-loader!less-loader'
 			// 	}),
 			// },
 			{
-				test: /\.less$/,
-				use: ExtractTextPlugin.extract({
-					use: 'style-loader!css-loader!less-loader'
-				}),
-			},
-			{
 				test: /\.css$/,
 				use: ExtractTextPlugin.extract({
-					use: 'css-loader'
+					use: 'css-loader!postcss-loader'
 				}),
 			},
 			{
