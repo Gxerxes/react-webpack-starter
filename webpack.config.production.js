@@ -45,21 +45,6 @@ module.exports = {
 	},
 	plugins: [
 		new ExtractTextPlugin("bundle.css"),
-		// new webpack.optimize.UglifyJsPlugin({
-		// 	compress: {
-		// 		screw_ie8: true,
-		// 		warnings: false
-		// 	},
-		// 	mangle: {
-		// 		screw_ie8: true
-		// 	},
-		// 	output: {
-		// 		comments: false,
-		// 		screw_ie8: true
-		// 	},
-		// 	minimize: true,
-		// 	sourceMap: true
-		// }),
 		new HtmlWebpackPlugin({
 			inject: true,
 			template: path.join(__dirname, '/index.html'),
@@ -81,19 +66,6 @@ module.exports = {
 			uglifyOptions: {
 			ie8: false,
 			ecma: 8,
-			// parse: {...options},
-			// mangle: {
-			// 	...options,
-			// 	properties: {
-			// 	// mangle property options
-			// 	}
-			// },
-			// output: {
-			// 	comments: false,
-			// 	beautify: false,
-			// 	...options
-			// },
-			// compress: {...options},
 			warnings: false
 			}
 		})

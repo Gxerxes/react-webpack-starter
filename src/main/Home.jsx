@@ -1,8 +1,5 @@
 import React from 'react'
 
-import ImgContainer from './components/imgContainer/imgContainerView'
-import { setTimeout } from 'timers';
-
 const styles = {
     base: {
         position: 'relative',
@@ -12,9 +9,6 @@ const styles = {
         alignItems: 'center',
         justifyContent: 'center',
         color: 'black'
-    },
-    fontColor: {
-        color: 'black'
     }
 }
 
@@ -22,12 +16,8 @@ export default class Home extends React.Component {
 
     constructor(props) {
         super(props);
-        this.state = {color: "blue"}
+        this.state = {color: "black"}
     }
-
-    // getInitialState() {
-    //     return {color: 'blue'}
-    // }
 
     componentDidMount() {
         this.timer = setInterval(() => this.tick(), 1000);
@@ -37,23 +27,10 @@ export default class Home extends React.Component {
         clearInterval(this.timer);
     }
 
-    door = true;
     tick() {
         this.setState({
             color: this.randomColor()
           });
-        // if(this.door) {
-        //     this.setState({
-        //         color: 'black'
-        //       });
-        //     this.door = false;
-        // }
-        // else {
-        //     this.setState({
-        //         color: 'blue'
-        //     });
-        //     this.door = true;
-        // }
     }
 
     randomColor() {
@@ -68,7 +45,6 @@ export default class Home extends React.Component {
         }
         return(
           <div style={styles.base}>
-            {/* <ImgContainer /> */}
             <h1 style={fontStyle.fontColor}>Welcome to DMViewer<i className="smile icon"></i></h1>
           </div>
         )
