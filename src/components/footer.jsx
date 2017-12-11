@@ -1,11 +1,12 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 
 const styles = {
   base: {
-    fontSize:'1rem',
-    width:'60%',
-    color:'darkGray',
-    float:'right'
+    fontSize: '1rem',
+    width: '60%',
+    color: 'darkGray',
+    float: 'right'
   }
 }
 
@@ -31,6 +32,6 @@ export default class Footer extends React.Component {
 
 }
 
-// Footer.propTypes = {
-//   onClick: React.PropTypes.func.isRequired
-// }
+Footer.propTypes = {
+  onClick: PropTypes.func.isRequired
+}

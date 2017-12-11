@@ -4,7 +4,7 @@
   "description": "a boiler plate for creating react applications bundled by webpack",
   "main": "src/js/app.js",
   "scripts": {
-    "lint": "eslint \"src/main/**/*.jsx\" -o lint_main_report.html -f html" ,
+    "lint": "eslint \"src/main/**/*.jsx\" -o lint_main_report.html -f html",
     "dev": "webpack-dev-server --config webpack.config.dev.js",
     "build": "webpack",
     "start": "webpack-dev-server --config webpack.config.production.js",
@@ -27,8 +27,9 @@
     "babel-preset-react-hmre": "^1.1.1",
     "font-awesome": "^4.7.0",
     "node-sass": "^4.5.3",
+    "prop-types": "^15.6.0",
     "react": "^16.0.0",
-    "react-dom": "^16.0.0",
+    "react-dom": "^16.2.0",
     "react-hot-loader": "^3.1.1",
     "react-redux": "^5.0.6",
     "redux": "^3.7.2"

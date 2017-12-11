@@ -27,6 +27,11 @@ const styles = {
 };
 
 export default class Toolbar extends React.Component {
+
+    static defaultProps = {
+        name: 'stranger'
+    }
+
     render() {
         return (
             // <div style={styles.buttonGrp}></div>

@@ -2,6 +2,7 @@ import { combineReducers } from 'redux'
 
 import submit from './submitReducer'
 
-export default combineReducers({
+const rootReducer = combineReducers({
   submit
 })
+export default rootReducer
