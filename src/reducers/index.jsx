@@ -1,8 +1,9 @@
 import { combineReducers } from 'redux'
 
 import submit from './submitReducer'
+import imgReducer from '../main/components/imgContainer/imgContainerReducer'
 
 const rootReducer = combineReducers({
-  submit
+  imgReducer
 })
 export default rootReducer

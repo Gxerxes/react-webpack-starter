@@ -2,6 +2,8 @@ import React from 'react';
 
 import Toolbar from '../toolbar/ToolbarView';
 
+import { connect } from 'react-redux';
+
 const styles = {
   base: {
     // display: 'flex',
@@ -29,11 +31,36 @@ const styles = {
   }
 }
 
-export default class ImgContainer extends React.Component {
+class ImgContainer extends React.Component {
+
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      imageLoaded: false
+    }
+
+    this.handleImageLoaded = this.handleImageLoaded.bind(this);
+    this.handleImageErrored = this.handleImageErrored.bind(this);
+  }
+
+  handleImageLoaded() {
+    this.setState({imageLoaded: true});
+    // console.log('loaded');
+    this.props.onImageLoaded(this.props.imageLoaded);
+  }
+
+  handleImageErrored() {
+    this.setState({imageLoaded: false})
+  }
+
   render() {
     return (
         <div style={styles.base}>
-            <img src="http://img1.3lian.com/2015/a1/46/d/198.jpg" style={styles.img} />
+            <img src="http://img1.3lian.com/2015/a1/46/d/198.jpg" 
+            onLoad={this.handleImageLoaded}
+            onError={this.handleImageErrored}
+            style={styles.img} />
             <span style={styles.center}>DMViewer</span>
             <Toolbar />
         </div>
@@ -45,4 +72,11 @@ export default class ImgContainer extends React.Component {
 
 // };
 
-// export default ImgContainer;
+const mapDispatchToProps = (dispath, ownProps) => ({
+  onImageLoaded: () => dispath({
+      type: 'IMG_LOAD',
+      imageLoaded: true
+    })
+})
+
+export default connect(null, null)(ImgContainer);

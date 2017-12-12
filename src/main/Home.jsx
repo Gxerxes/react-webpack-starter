@@ -3,6 +3,7 @@ import React from 'react'
 import ImgContainer from './components/imgContainer/imgContainerView'
 import { setTimeout } from 'timers';
 
+
 const styles = {
     base: {
         position: 'relative',
@@ -22,7 +23,9 @@ export default class Home extends React.Component {
 
     constructor(props) {
         super(props);
-        this.state = {color: "blue"}
+        this.state = {
+            color: "blue"
+        }
     }
 
     // getInitialState() {
@@ -68,7 +71,7 @@ export default class Home extends React.Component {
         }
         return(
           <div style={styles.base}>
-            {/* <ImgContainer /> */}
+            <ImgContainer />
             <h1 style={fontStyle.fontColor}>Welcome to DMViewer<i className="smile icon"></i></h1>
           </div>
         )

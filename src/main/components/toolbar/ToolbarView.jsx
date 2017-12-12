@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { Button } from 'semantic-ui-react'
+import { Button, Popup } from 'semantic-ui-react'
 // import { connect } from 'react-redux'
 // import { sendMsg } from './toolbarActions'
 
@@ -37,7 +37,8 @@ export default class Toolbar extends React.Component {
             // <div style={styles.buttonGrp}></div>
         <div style={styles.buttonGrp}>
             <Button.Group vertical>
-              <Button icon="align left" />
+            <Popup trigger={<Button icon="align left" />} content="Add users"></Popup>
+              
               <Button icon="align center"/>
               <Button icon="align right" />
               <Button icon="align justify" />

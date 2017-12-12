@@ -2,16 +2,12 @@ export const SUBMIT_FORM_SUCCESSFUL = 'SUBMIT_FORM_SUCCESSFUL'
 export const DISPLAY_NAME = 'DISPLAY_NAME'
 
 
-export const submitFormSuccess = (payload) => {
-  return {
+export const submitFormSuccess = payload => ({  
     type: SUBMIT_FORM_SUCCESSFUL,
-    payload,
-  }
-}
+    payload
+})
 
-export const displayName = (payload) => {
-  return {
+export const displayName = payload => ({ 
     type: DISPLAY_NAME,
-    payload,
-  }
-}
+    payload
+})
