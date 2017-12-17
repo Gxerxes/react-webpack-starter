@@ -45,25 +45,25 @@ class ImgContainer extends React.Component {
   }
 
   handleImageLoaded() {
-    this.setState({imageLoaded: true});
+    this.setState({ imageLoaded: true });
     // console.log('loaded');
     this.props.onImageLoaded(this.props.imageLoaded);
   }
 
   handleImageErrored() {
-    this.setState({imageLoaded: false})
+    this.setState({ imageLoaded: false })
   }
 
   render() {
     return (
-        <div style={styles.base}>
-            <img src="http://img1.3lian.com/2015/a1/46/d/198.jpg" 
-            onLoad={this.handleImageLoaded}
-            onError={this.handleImageErrored}
-            style={styles.img} />
-            <span style={styles.center}>DMViewer</span>
-            <Toolbar />
-        </div>
+      <div style={styles.base}>
+        <img src="http://img1.3lian.com/2015/a1/46/d/198.jpg"
+          onLoad={this.handleImageLoaded}
+          onError={this.handleImageErrored}
+          style={styles.img} />
+        <span style={styles.center}>DMViewer</span>
+        <Toolbar />
+      </div>
     )
   }
 }
@@ -74,9 +74,9 @@ class ImgContainer extends React.Component {
 
 const mapDispatchToProps = (dispath, ownProps) => ({
   onImageLoaded: () => dispath({
-      type: 'IMG_LOAD',
-      imageLoaded: true
-    })
+    type: 'IMG_LOAD',
+    imageLoaded: true
+  })
 })
 
 export default connect(null, null)(ImgContainer);
